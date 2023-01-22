@@ -10,4 +10,4 @@ app.get('/api/error/:status',(req,res)=>{
 });
 
 const port= process.env.PORT || 4000;
-app.listen(port, () =>console.log(`t ${port}`)  )
+app.listen(port, () =>console.log(`port ${port}`)  )
