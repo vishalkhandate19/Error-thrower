@@ -64,6 +64,21 @@ app.get('/api/error/:time/:status/:size',(req,res)=>{
     }, time); 
 });
 
+
+app.post('/api/error/:time/:status/:size',(req,res)=>{
+    const time = req.params.time
+    const status= req.params.status
+    const size= req.params.size
+
+    setTimeout(function() {
+        const responseSize = size * 1024; 
+        const responseString = generateString(responseSize);
+        res.set('Timing-Allow-Origin','*');
+        res.set('Access-Control-Expose-Headers','*');
+        res.status(status).send(`Status ${status} ${responseString}`);
+    }, time); 
+});
+
 function generateString(size) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
