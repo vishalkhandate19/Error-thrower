@@ -17,6 +17,8 @@ app.get('/api/error/:status',(req,res)=>{
 
 app.post('/api/error/:status',(req,res)=>{
     const status= req.params.status
+    res.set('Timing-Allow-Origin','*');
+    res.set('Access-Control-Expose-Headers','*');
         res.status(status).json(
           {  username: "abc",
                 password: "test"
