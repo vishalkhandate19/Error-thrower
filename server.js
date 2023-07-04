@@ -10,9 +10,13 @@ app.use(cors({
 
 app.get('/api/error/:status',(req,res)=>{
     const status= req.params.status
+    setTimeout(function() {
+
     res.set('Timing-Allow-Origin','*');
     res.set('Access-Control-Expose-Headers','*');
         res.status(status).send(`Status ${status}`);
+    }, 1000); 
+
 });
 
 app.post('/api/error/:status',(req,res)=>{
