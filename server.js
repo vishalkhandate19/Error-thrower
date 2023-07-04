@@ -48,129 +48,32 @@ app.post('/api/error/:time/:status',(req,res)=>{
     }, time); 
 });
 
-app.get('/api/error/:time/:status/300',(req,res)=>{
+
+
+app.get('/api/error/:time/:status/:size',(req,res)=>{
     const time = req.params.time
     const status= req.params.status
-    let filename = 0;
+    const size= req.params.size
 
     setTimeout(function() {
+        const responseSize = size * 1024; 
+        const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        filename = 'filte300kb.js';
-        fs.readFile(filename, 'utf8', (err, data) => {
-        if (err) {
-          console.error(err);
-          res.set('Timing-Allow-Origin','*');
-          res.setHeader('Content-Type','application/json');
-          res.set('Access-Control-Expose-Headers','*');
-          return res.status(status).send('Error reading file');
-        }
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        res.status(status).send(`Status ${data}`);
-    })
-
+        res.status(status).send(`Status ${status} ${responseString}`);
     }, time); 
 });
 
-app.get('/api/error/:time/:status/500',(req,res)=>{
-    const time = req.params.time
-    const status= req.params.status
-    let filename = 0;
-
-    setTimeout(function() {
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        filename = 'filte500kb.txt';
-        fs.readFile(filename, 'utf8', (err, data) => {
-        if (err) {
-          console.error(err);
-          res.set('Timing-Allow-Origin','*');
-          res.set('Access-Control-Expose-Headers','*');
-          return res.status(status).send('Error reading file');
-        }
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        res.status(status).send(`Status ${data}`);
-    })
-
-    }, time); 
-});
-
-app.get('/api/error/:time/:status/800',(req,res)=>{
-    const time = req.params.time
-    const status= req.params.status
-    let filename = 0;
-
-    setTimeout(function() {
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        filename = 'filte800kb.txt';
-        fs.readFile(filename, 'utf8', (err, data) => {
-        if (err) {
-          console.error(err);
-          res.set('Timing-Allow-Origin','*');
-          res.set('Access-Control-Expose-Headers','*');
-          return res.status(status).send('Error reading file');
-        }
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        res.status(status).send(`Status ${data}`);
-    })
-
-    }, time); 
-});
-
-app.get('/api/error/:time/:status/1000',(req,res)=>{
-    const time = req.params.time
-    const status= req.params.status
-    let filename = 0;
-
-    setTimeout(function() {
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        filename = 'filte1000kb.txt';
-        fs.readFile(filename, 'utf8', (err, data) => {
-        if (err) {
-          console.error(err);
-          res.set('Timing-Allow-Origin','*');
-          res.set('Access-Control-Expose-Headers','*');
-          return res.status(status).send('Error reading file');
-        }
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        res.status(status).send(`Status ${data}`);
-    })
-
-    }, time); 
-});
-
-app.get('/api/error/:time/:status/4000',(req,res)=>{
-    const time = req.params.time
-    const status= req.params.status
-    let filename = 0;
-
-    setTimeout(function() {
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        filename = 'filte4000kb.txt';
-        fs.readFile(filename, 'utf8', (err, data) => {
-        if (err) {
-          console.error(err);
-          res.set('Timing-Allow-Origin','*');
-          res.set('Access-Control-Expose-Headers','*');
-          return res.status(status).send('Error reading file');
-        }
-        res.set('Timing-Allow-Origin','*');
-        res.set('Access-Control-Expose-Headers','*');
-        res.status(status).send(`Status ${data}`);
-    })
-
-    }, time); 
-});
-
-
-
+function generateString(size) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+  
+    for (let i = 0; i < size; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+  
+    return result;
+  }
 
 const port= process.env.PORT || 4000;
 app.listen(port, () =>console.log(`port ${port}`)  )
