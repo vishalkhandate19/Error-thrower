@@ -17,12 +17,12 @@ app.get('/api/error/:status',(req,res)=>{
 
 app.post('/api/error/:status',(req,res)=>{
     const status= req.params.status
+    setTimeout(function() {
     res.set('Timing-Allow-Origin','*');
     res.set('Access-Control-Expose-Headers','*');
-        res.status(status).json(
-          {  username: "abc",
-                password: "test"
-});
+    res.status(status).send(`Status ${status}`);
+}, 1000); 
+
 });
 
 app.get('/api/error/500/:uuid',(req,res)=>{
@@ -49,8 +49,6 @@ app.post('/api/error/:time/:status',(req,res)=>{
 
     }, time); 
 });
-
-
 
 app.get('/api/error/:time/:status/:size',(req,res)=>{
     const time = req.params.time
