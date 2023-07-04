@@ -56,11 +56,12 @@ app.get('/api/error/:time/:status/300',(req,res)=>{
     setTimeout(function() {
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        filename = 'filte300kb.txt';
+        filename = 'filte300kb.js';
         fs.readFile(filename, 'utf8', (err, data) => {
         if (err) {
           console.error(err);
           res.set('Timing-Allow-Origin','*');
+          res.setHeader('Content-Type','application/json');
           res.set('Access-Control-Expose-Headers','*');
           return res.status(status).send('Error reading file');
         }
