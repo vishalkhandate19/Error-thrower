@@ -261,13 +261,11 @@ app.get('/api/login ',(req,res)=>{
 
 //m
 app.post('/api/signUp ',(req,res)=>{
-    setTimeout(function() {
         const responseSize = 530 * 1024; 
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
         res.status(402).send(`Status ${202} ${responseString}`);
-    }, 3000); 
 });
 
 //m
