@@ -112,8 +112,8 @@ app.get('/api/user',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(201).send(`Status ${202} ${responseString}`);
-    }, 3000); 
+        res.status(203).send(`Status ${202} ${responseString}`);
+    }, 300); 
 });
 
 //p
@@ -123,8 +123,8 @@ app.post('/api/user',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(201).send(`Status ${202} ${responseString}`);
-    }, 200); 
+        res.status(200).send(`Status ${202} ${responseString}`);
+    }, 1200); 
 });
 
 //m
@@ -145,8 +145,8 @@ app.get('/api/user/search',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(200).send(`Status ${202} ${responseString}`);
-    }, 4000); 
+        res.status(203).send(`Status ${202} ${responseString}`);
+    }, 1000); 
 });
 
 //p
@@ -156,8 +156,8 @@ app.post('/api/user/search',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(200).send(`Status ${202} ${responseString}`);
-    }, 2000); 
+        res.status(203).send(`Status ${202} ${responseString}`);
+    }, 200); 
 });
 
 //m
