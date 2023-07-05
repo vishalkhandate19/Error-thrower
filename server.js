@@ -86,34 +86,34 @@ app.get('/api/error/:status',(req,res)=>{
 //f
 app.get('/api/error',(req,res)=>{
     setTimeout(function() {
-        const responseSize = 100 * 1024; 
+        const responseSize = 800 * 1024; 
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(404).send(`Status ${404} ${responseString}`);
-    }, 1000); 
+        res.status(402).send(`Status ${404} ${responseString}`);
+    }, 2000); 
 });
 
 //f
 app.post('/api/error',(req,res)=>{
     setTimeout(function() {
-        const responseSize = 500 * 1024; 
+        const responseSize = 520 * 1024; 
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(402).send(`Status ${404} ${responseString}`);
-    }, 5000); 
+        res.status(502).send(`Status ${404} ${responseString}`);
+    }, 10000); 
 });
 
 //p
 app.get('/api/user',(req,res)=>{
     setTimeout(function() {
-        const responseSize = 1000 * 1024; 
+        const responseSize = 100 * 1024; 
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(203).send(`Status ${202} ${responseString}`);
-    }, 300); 
+        res.status(201).send(`Status ${202} ${responseString}`);
+    }, 1300); 
 });
 
 //p
@@ -123,8 +123,8 @@ app.post('/api/user',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(200).send(`Status ${202} ${responseString}`);
-    }, 1200); 
+        res.status(201).send(`Status ${202} ${responseString}`);
+    }, 200); 
 });
 
 //m
@@ -134,7 +134,7 @@ app.get('/api/getDetails',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(202).send(`Status ${202} ${responseString}`);
+        res.status(402).send(`Status ${202} ${responseString}`);
     }, 1100); 
 });
 
@@ -167,14 +167,14 @@ app.get('/api/addUser',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(202).send(`Status ${202} ${responseString}`);
-    }, 100); 
+        res.status(402).send(`Status ${202} ${responseString}`);
+    }, 1100); 
 });
 
 //m
 app.post('/api/addUser',(req,res)=>{
     setTimeout(function() {
-        const responseSize = 300 * 1024; 
+        const responseSize = 500 * 1024; 
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
@@ -185,7 +185,7 @@ app.post('/api/addUser',(req,res)=>{
 //f
 app.get('/api/activity',(req,res)=>{
     setTimeout(function() {
-        const responseSize = 10 * 1024; 
+        const responseSize = 1110 * 1024; 
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
