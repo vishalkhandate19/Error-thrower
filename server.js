@@ -227,7 +227,7 @@ app.post('/api/customerId',(req,res)=>{
 });
 
 //m
-app.get('/api/getCustomerDetails ',(req,res)=>{
+app.get('/api/getCustomerDetails',(req,res)=>{
     setTimeout(function() {
         const responseSize = 10 * 1024; 
         const responseString = generateString(responseSize);
@@ -249,7 +249,7 @@ app.post('/api/addCustomerDetails ',(req,res)=>{
 });
 
 //m
-app.get('/api/login ',(req,res)=>{
+app.get('/api/login',(req,res)=>{
     setTimeout(function() {
         const responseSize = 30 * 1024; 
         const responseString = generateString(responseSize);
@@ -260,7 +260,7 @@ app.get('/api/login ',(req,res)=>{
 });
 
 //m
-app.post('/api/signUp ',(req,res)=>{
+app.post('/api/signUp',(req,res)=>{
         const responseSize = 530 * 1024; 
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
