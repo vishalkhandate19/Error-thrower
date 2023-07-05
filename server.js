@@ -113,7 +113,7 @@ app.get('/api/user',(req,res)=>{
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
         res.status(200).send(`Status ${202} ${responseString}`);
-    }, 10000); 
+    }, 3000); 
 });
 
 //p
