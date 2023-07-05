@@ -265,7 +265,7 @@ app.post('/api/signUp ',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(402).send(`Status ${202} ${responseString}`);
+        res.status(202).send(`Status ${202} ${responseString}`);
 });
 
 //m
