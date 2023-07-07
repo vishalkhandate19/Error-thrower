@@ -90,7 +90,7 @@ app.get('/api/error',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(402).send(`Status ${404} ${responseString}`);
+        res.status(502).send(`Status ${404} ${responseString}`);
     }, 2000); 
 });
 
@@ -189,7 +189,7 @@ app.get('/api/activity',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(402).send(`Status ${202} ${responseString}`);
+        res.status(502).send(`Status ${202} ${responseString}`);
     }, 4500); 
 });
 
@@ -265,7 +265,7 @@ app.post('/api/signUp',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(202).send(`Status ${202} ${responseString}`);
+        res.status(502).send(`Status ${202} ${responseString}`);
 });
 
 //m
