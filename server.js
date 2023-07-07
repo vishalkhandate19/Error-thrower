@@ -90,7 +90,7 @@ app.get('/api/error',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(402).send(`Status ${404} ${responseString}`);
+        res.status(202).send(`Status ${404} ${responseString}`);
     }, 2000); 
 });
 
@@ -101,7 +101,7 @@ app.post('/api/error',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(502).send(`Status ${404} ${responseString}`);
+        res.status(200).send(`Status ${404} ${responseString}`);
     }, 10000); 
 });
 
@@ -112,7 +112,7 @@ app.get('/api/user',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(201).send(`Status ${202} ${responseString}`);
+        res.status(200).send(`Status ${202} ${responseString}`);
     }, 1300); 
 });
 
@@ -134,7 +134,7 @@ app.get('/api/getDetails',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(402).send(`Status ${202} ${responseString}`);
+        res.status(202).send(`Status ${202} ${responseString}`);
     }, 1100); 
 });
 
@@ -167,7 +167,7 @@ app.get('/api/addUser',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(402).send(`Status ${202} ${responseString}`);
+        res.status(202).send(`Status ${202} ${responseString}`);
     }, 1100); 
 });
 
@@ -189,7 +189,7 @@ app.get('/api/activity',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(404).send(`Status ${202} ${responseString}`);
+        res.status(202).send(`Status ${202} ${responseString}`);
     }, 4500); 
 });
 
@@ -200,7 +200,7 @@ app.post('/api/activity',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(404).send(`Status ${202} ${responseString}`);
+        res.status(202).send(`Status ${202} ${responseString}`);
     }, 600); 
 });
 
@@ -211,7 +211,7 @@ app.get('/api/customerId',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(502).send(`Status ${202} ${responseString}`);
+        res.status(201).send(`Status ${202} ${responseString}`);
     }, 500); 
 });
 
@@ -233,7 +233,7 @@ app.get('/api/getCustomerDetails',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(401).send(`Status ${202} ${responseString}`);
+        res.status(201).send(`Status ${202} ${responseString}`);
     }, 500); 
 });
 
@@ -255,8 +255,8 @@ app.get('/api/login',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(403).send(`Status ${202} ${responseString}`);
-    }, 100); 
+        res.status(203).send(`Status ${202} ${responseString}`);
+    }, 1100); 
 });
 
 //m
@@ -275,7 +275,7 @@ app.post('/api/public',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(202).send(`Status ${202} ${responseString}`);
+        res.status(200).send(`Status ${202} ${responseString}`);
     }, 1100); 
 });
 
@@ -286,8 +286,8 @@ app.get('/api/public',(req,res)=>{
         const responseString = generateString(responseSize);
         res.set('Timing-Allow-Origin','*');
         res.set('Access-Control-Expose-Headers','*');
-        res.status(202).send(`Status`);
-    }, 100); 
+        res.status(200).send(`Status`);
+    }, 1100); 
 });
 
 
